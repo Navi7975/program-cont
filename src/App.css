@@ -1,38 +1,234 @@
-.App {
+.main-container {
+  width: 100%;
+  background-color: rgb(16, 17, 53);
+  display: grid;
+  grid-template-rows: auto 1fr;
+  padding: 20px;
+  height: 100%;
+}
+
+.first-row {
   text-align: center;
+  margin-bottom: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.first-row h1 {
+  margin-bottom: 10px;
+  color: yellow;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.model-buttons {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 0;
+  margin-top: 20px;
+}
+
+.model-button {
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border: 1px solid #b969f3;
+}
+
+.model1 {
+  background-color: #483d8b;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+
+.model2 {
+  background-color: #483d8b;
+  border-radius: 0;
+}
+
+.model3 {
+  background-color: #483d8b;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.model-button:hover,
+.model-button:focus {
+  background-color: #4b0082;
+}
+
+.second-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.content-column {
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.content-grid h2,
+.content-grid h3 {
+  margin-bottom: 10px;
+}
+
+.content-grid ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  color: white;
+  font-size: 20px;
+}
+
+.image-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-column img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+#image-container-1 {
+  display: block;
+}
+
+.column-content {
+  margin: 10%;
+  padding: 10px;
+  margin-left: 15%;
+  justify-content: center;
+  align-items: center;
+}
+
+.column-content h2, h3 {
+  margin-bottom: 20px;
+  color: yellow;
+}
+
+.column-content p {
+  margin-bottom: 20px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.first-row p {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  margin-left: 10%;
+  margin-right: 10%;
+  font-size: 20px;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+li {
+  margin-bottom: 15px;
+}
+
+.column-content button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.column-content button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.column-content button:focus {
+  outline: none;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+  .second-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .content-column, .image-column {
+    padding: 15px;
+  }
+
+  .model-button {
+    font-size: 18px;
+  }
+
+  .first-row p {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    padding: 10px;
+  }
+
+  .model-button {
+    font-size: 16px;
+    padding: 8px 15px;
+  }
+
+  .first-row h1 {
+    font-size: 24px;
+  }
+
+  .first-row p {
+    font-size: 18px;
+  }
+
+  .column-content h2, .column-content h3 {
+    font-size: 20px;
+  }
+
+  .content-grid ul {
+    font-size: 18px;
+  }
+
+  .column-content button {
+    padding: 8px 15px;
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  .model-buttons {
+    flex-direction: column;
+  }
+
+  .model-button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .first-row h1 {
+    font-size: 20px;
+  }
+
+  .first-row p {
+    font-size: 16px;
+  }
+
+  .content-column, .image-column {
+    padding: 10px;
+  }
+
+  .column-content h2, .column-content h3 {
+    font-size: 18px;
+  }
+
+  .column-content button {
+    font-size: 0.8em;
+    padding: 7px 12px;
   }
 }
